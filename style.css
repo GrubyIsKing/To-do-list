@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#submit{
+    margin-left: 5px;
+    width: 100px;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: black;
+    box-shadow: 0 0 10px 1px black;
+    color: white;
+}
+
+input{
+    box-shadow: 0 0 10px 1px black;
+    padding: 2px;
+    border: 2px solid black;
+    box-shadow: 0 0 10px 1px black;
+    background: black;
+    color: white;
+    outline: none;
+    border-radius: 8px;
+}
+
+::placeholder{
+    color: white;
+}
+
+.box{
+    width: 400px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: lightgrey;
+    border-radius: 8px;
+    border: 2px solid black;
+
+}
+
+.notes{
+    height: 100px;
+}
+
+.description{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.continue, .description{
+    margin-top: 3px;
+}
+
+.continue{
+    height: 19px;
+}
+
+.noteChild{
+    display: flex;
+    height: 30px;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+button{
+    border: 2px solid black;
+    padding: 2px;
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px black;
+}
+
+.noteWrapper{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.note{
+    margin-left: 10px;
+}
+
+.noteDelete{
+    margin-right: 10px;
+}
+
+
+
+@media all and (max-width: 375px){
+    .box{
+        width: 300px;
+    }
+    .description{
+        width: 300px;
+    }
+}
