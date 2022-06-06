@@ -1,8 +1,9 @@
 const submit = document.getElementById("submit");
 const notes = document.getElementById("notes");
 const noteToAdd = document.getElementById("note");
+const descriptionToAdd = document.getElementById("description");
 
-const AddNote =()=>{
+function AddNote (){
     let noteAdded = document.createElement("div");
     let deleteNote = document.createElement("button");
     let notesDiv = document.createElement("div");
@@ -13,16 +14,29 @@ const AddNote =()=>{
     noteAdded.classList.add("note");
     deleteNote.classList.add("noteDelete");
     deleteNote.innerHTML = "usuń";
-    noteAdded.innerHTML = noteToAdd.value;
-    notesDiv.appendChild(noteAdded);
-    notesDiv.appendChild(deleteNote);
-    noteWrapper.appendChild(notesDiv);
-    noteWrapper.appendChild(brake);
-    notes.appendChild(noteWrapper);
+    noteAdded.innerHTML = `<div class="noteValue"> ${noteToAdd.value} </div> <div class="noteDes">${descriptionToAdd.value} </div>`;
+    if(noteToAdd.value == ""){
+        alert("Notatka jest pusta!");
+    }
+    else{
+        notesDiv.appendChild(noteAdded);
+        notesDiv.appendChild(deleteNote);
+        noteWrapper.appendChild(notesDiv);
+        noteWrapper.appendChild(brake);
+        notes.appendChild(noteWrapper);
+    }
     const DeleteNote =()=>{
         notes.removeChild(noteWrapper);
     }
     deleteNote.addEventListener("click", DeleteNote);
+    noteToAdd.value = "";
+    descriptionToAdd.value = "";
 }
 
 submit.addEventListener("click", AddNote);
+
+document.addEventListener('keyup', function(e) {
+    if(e.key == "Enter"){
+        AddNote();
+    }
+});

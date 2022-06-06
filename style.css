@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -18,102 +21,130 @@ body{
     flex-direction: column;
 }
 
-#submit{
-    margin-left: 5px;
-    width: 100px;
-    padding: 2px;
-    border: 2px solid black;
-    border-radius: 8px;
+.main{
+    height: 90vh;
+    width: 100%;
+}
+
+.header{
+    height: 10vh;
+    width: 100%;
     background-color: black;
-    box-shadow: 0 0 10px 1px black;
+    display: flex;
+    align-items: center;
     color: white;
+    justify-content: space-evenly;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    width: 500px;
+    justify-content: space-around;
+}
+
+.noteChild{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.note{
+    display: flex;
+}
+
+.noteDes{
+    margin-left: 20px;
 }
 
 input{
-    box-shadow: 0 0 10px 1px black;
-    padding: 2px;
-    border: 2px solid black;
-    box-shadow: 0 0 10px 1px black;
-    background: black;
+    height: 20px;
+    padding: 10px;
+    border: 2px solid white;
+    background-color: black;
     color: white;
     outline: none;
     border-radius: 8px;
+    transition: 0.3s;
+}
+
+input:focus{
+    background-color: white;
+    box-shadow: 0 0 10px 1px white;
+    color: black;
+}
+input:focus::placeholder {
+    color: black;
+}
+
+#submit{
+    padding: 5px;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#submit:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px 1px white;
+}
+
+.noteDelete{
+    padding: 2px;
+    color: black;
+    width: 50px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px solid black;
+    background: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.noteDelete:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 10px 1px black;
 }
 
 ::placeholder{
     color: white;
 }
 
-.box{
-    width: 400px;
-    height: 200px;
-    overflow-y: auto;
-    background-color: lightgrey;
-    border-radius: 8px;
-    border: 2px solid black;
-
-}
-
-.notes{
-    height: 100px;
-}
-
-.description{
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 400px;
-}
-
-.continue, .description{
-    margin-top: 3px;
-}
-
-.continue{
-    height: 19px;
-}
-
-.noteChild{
-    display: flex;
-    height: 30px;
-    margin-bottom: 5px;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-button{
-    border: 2px solid black;
-    padding: 2px;
-    color: white;
-    background-color: black;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 1px black;
+@keyframes appear{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
 }
 
 .noteWrapper{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    margin-top: 5px;
+    animation: appear 1s ease-in-out both;
 }
-
-.note{
-    margin-left: 10px;
-}
-
-.noteDelete{
-    margin-right: 10px;
-}
-
-
 
 @media all and (max-width: 375px){
-    .box{
-        width: 300px;
+    h2{
+        display: none;
     }
-    .description{
-        width: 300px;
+    input{
+        width: 110px;
+    }
+    ::placeholder{
+        text-align: center;
+    }
+    .noteChild{
+        width: 90%;
     }
 }
